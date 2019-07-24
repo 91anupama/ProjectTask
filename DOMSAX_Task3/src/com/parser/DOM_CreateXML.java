@@ -17,10 +17,13 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 public class DOM_CreateXML {
-	public static final String xmlFilePath="F:\\Project_Task\\DOMSAX_Task3\\src\\com\\parser\\new.xml";
+	public static final String xmlFilePath="new.xml";
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		String id1;
+		Employee emp=new Employee();
+				
 		
 		try {
 			DocumentBuilderFactory documentFactory=DocumentBuilderFactory.newInstance();
@@ -37,7 +40,8 @@ public class DOM_CreateXML {
 			
 			//set attribute to staff element
 			Attr attr=document.createAttribute("id");
-			attr.setValue("10");
+			id1=emp.setId("10");
+			attr.setValue(id1);
 			employee.setAttributeNode(attr);
 			//employee.setAttribute("id", "10");
 			

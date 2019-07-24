@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+
+</head>
+<body>
+<form id="myform">
+<label for="field">number 1: </label>
+
+
+<input class="left" id="n1" name="field"><br>
+
+<label for="field">number 2: </label>
+<input class="left" id="n2" name="field">
+<select id="operators">
+<option value="+">+</option>
+<option value="-">-</option>
+<option value="/">/</option>
+<option value="X">X</option>
+</select>
+<button onclick="calc();">=</button>
+<input type="text" id="result">
+
+<br/>
+<input type="submit" value="Validate!">
+</form>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+<script>
+// just for the demos, avoids form submit
+jQuery.validator.setDefaults({
+  debug: true,
+  success: "valid"
+});
+$( "#myform" ).validate({
+  rules: {
+    field: {
+
+
+      required: true,
+      number: true
+    }
+  }
+});
+function calc() {
+
+var n1 = parseFloat(document.getElementById('n1').value);
+var n2 = parseFloat(document.getElementById('n2').value);
+var oper = document.getElementById('operators').value;
+if (oper === '+') {
+document.getElementById('result').value = n1 + n2;
+}
+
+if (oper === '-') {
+document.getElementById('result').value = n1 - n2;
+}
+
+if (oper === '/') {
+document.getElementById('result').value = n1 / n2;
+}
+
+if (oper === 'X') {
+document.getElementById('result').value = n1 * n2;
+}
+
+}
+</script>
+</body>
+</html>
+

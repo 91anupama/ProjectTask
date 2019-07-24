@@ -26,7 +26,8 @@ public class SAXReadXML {
 				System.out.println("Start Element:"+elementName);
 				if(elementName.equalsIgnoreCase("employee")) {
 					emp=new Employee();
-					emp.setId(attributes.getValue("id"));
+					id=emp.getId();
+					attributes.getValue(id);
 					bemp=true;
 				}
 				if(elementName.equalsIgnoreCase("firstname")) {
@@ -71,7 +72,7 @@ public class SAXReadXML {
 				}
 			}
 			};
-			saxParser.parse("F:\\Project_Task\\DOMSAX_Task3\\src\\com\\parser\\new.xml", handler);
+			saxParser.parse("new.xml", handler);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

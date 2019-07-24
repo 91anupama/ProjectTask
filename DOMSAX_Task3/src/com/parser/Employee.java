@@ -7,8 +7,8 @@ public class Employee {
 		return id;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public String setId(String id) {
+		return this.id = id;
 	}
 
 }
